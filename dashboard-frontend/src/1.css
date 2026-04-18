@@ -1,0 +1,56 @@
+.export-box {
+  margin-top: 16px;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  width: 700px;
+  max-width: 100%;
+}
+
+.export-title {
+  text-align: center;
+  background: #d9ead3;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #999;
+}
+
+.export-subtitle {
+  margin-top: 18px;
+  text-align: center;
+  background: #d9ead3;
+  padding: 8px;
+  font-weight: bold;
+  border: 1px solid #999;
+}
+
+.export-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+
+.export-table th,
+.export-table td {
+  border: 1px solid #999;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.export-table .section-header th {
+  background: #00b0f0;
+  color: #000;
+  font-weight: bold;
+}
+
+.export-box .positive {
+  color: #008000;
+  font-weight: bold;
+}
+
+.export-box .negative {
+  color: #d00000;
+  font-weight: bold;
+}

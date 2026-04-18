@@ -1,0 +1,421 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "DashboardVentas.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Dashboard/{anio}/{mes}": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardMensualDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardMensualDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardMensualDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Metas": {
+      "post": {
+        "tags": [
+          "Metas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardarMetaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardarMetaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardarMetaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Metas/{anio}/{mes}": {
+      "get": {
+        "tags": [
+          "Metas"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ventas": {
+      "post": {
+        "tags": [
+          "Ventas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CrearVentaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CrearVentaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CrearVentaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ventas/{anio}/{mes}": {
+      "get": {
+        "tags": [
+          "Ventas"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CrearVentaDto": {
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DashboardMensualDto": {
+        "type": "object",
+        "properties": {
+          "anio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreMes": {
+            "type": "string",
+            "nullable": true
+          },
+          "diaCorte": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "diasDelMes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "metaMensual": {
+            "type": "number",
+            "format": "double"
+          },
+          "metaDiaria": {
+            "type": "number",
+            "format": "double"
+          },
+          "ventaAcumulada": {
+            "type": "number",
+            "format": "double"
+          },
+          "alDia": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentajeAlDia": {
+            "type": "number",
+            "format": "double"
+          },
+          "diferencia": {
+            "type": "number",
+            "format": "double"
+          },
+          "falta": {
+            "type": "number",
+            "format": "double"
+          },
+          "diariaParaMeta": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentajeTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "mesPasado": {
+            "$ref": "#/components/schemas/ResumenComparativoDto"
+          },
+          "anioPasado": {
+            "$ref": "#/components/schemas/ResumenComparativoDto"
+          },
+          "proyeccionTienda": {
+            "type": "number",
+            "format": "double"
+          },
+          "proyeccionVendedor": {
+            "type": "number",
+            "format": "double"
+          },
+          "proyeccionMayoreo": {
+            "type": "number",
+            "format": "double"
+          },
+          "detalle": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetalleDiarioDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetalleDiarioDto": {
+        "type": "object",
+        "properties": {
+          "dia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ventaDia": {
+            "type": "number",
+            "format": "double"
+          },
+          "ventaAcumulada": {
+            "type": "number",
+            "format": "double"
+          },
+          "metaAcumulada": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentajeDia": {
+            "type": "number",
+            "format": "double"
+          },
+          "diferenciaDia": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuardarMetaDto": {
+        "type": "object",
+        "properties": {
+          "anio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "meta": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResumenComparativoDto": {
+        "type": "object",
+        "properties": {
+          "ventaAcumulada": {
+            "type": "number",
+            "format": "double"
+          },
+          "porcentaje": {
+            "type": "number",
+            "format": "double"
+          },
+          "diferencia": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

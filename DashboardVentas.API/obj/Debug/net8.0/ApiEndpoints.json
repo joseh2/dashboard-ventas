@@ -1,0 +1,128 @@
+[
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.DashboardController",
+    "Method": "Get",
+    "RelativePath": "api/Dashboard/{anio}/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DashboardVentas.API.DTOs.DashboardMensualDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.MetasController",
+    "Method": "Post",
+    "RelativePath": "api/Metas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DashboardVentas.API.DTOs.GuardarMetaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.MetasController",
+    "Method": "Get",
+    "RelativePath": "api/Metas/{anio}/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.VentasController",
+    "Method": "Post",
+    "RelativePath": "api/Ventas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DashboardVentas.API.DTOs.CrearVentaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.VentasController",
+    "Method": "Get",
+    "RelativePath": "api/Ventas/{anio}/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DashboardVentas.API.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DashboardVentas.API.WeatherForecast, DashboardVentas.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
