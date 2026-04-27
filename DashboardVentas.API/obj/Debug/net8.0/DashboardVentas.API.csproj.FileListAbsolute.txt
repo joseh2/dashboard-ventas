@@ -168,3 +168,4 @@ C:\Users\jmcm2\source\repos\DashboardVentas.API\DashboardVentas.API\bin\Debug\ne
 C:\Users\jmcm2\source\repos\DashboardVentas.API\DashboardVentas.API\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\jmcm2\source\repos\DashboardVentas.API\DashboardVentas.API\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\jmcm2\source\repos\DashboardVentas.API\DashboardVentas.API\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\jmcm2\source\repos\DashboardVentas.API\DashboardVentas.API\obj\Debug\net8.0\DashboardVentas.API.sourcelink.json
