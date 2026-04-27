@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[10.0.6, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Stenn.EntityFrameworkCore.InMemory.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.9.50, )"
