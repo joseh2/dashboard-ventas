@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|c:\\users\\jmcm2\\source\\repos\\dashboardventas.api\\dashboardventas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|solutionrelative:dashboardventas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|c:\\users\\jmcm2\\source\\repos\\dashboardventas.api\\dashboardventas.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|solutionrelative:dashboardventas.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|c:\\users\\jmcm2\\source\\repos\\dashboardventas.api\\dashboardventas.api\\dashboardventas.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|solutionrelative:dashboardventas.api\\dashboardventas.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|c:\\users\\jmcm2\\source\\repos\\dashboardventas.api\\dashboardventas.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3177977-A53A-4F13-A2DD-67C3C48B1DC5}|DashboardVentas.API\\DashboardVentas.API.csproj|solutionrelative:dashboardventas.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\appsettings.json",
+              "RelativeDocumentMoniker": "DashboardVentas.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\appsettings.json",
+              "RelativeToolTip": "DashboardVentas.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-17T06:35:25.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\Program.cs",
+              "RelativeDocumentMoniker": "DashboardVentas.API\\Program.cs",
+              "ToolTip": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\Program.cs",
+              "RelativeToolTip": "DashboardVentas.API\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T06:34:43.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardVentas.API.http",
+              "DocumentMoniker": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\DashboardVentas.API.http",
+              "RelativeDocumentMoniker": "DashboardVentas.API\\DashboardVentas.API.http",
+              "ToolTip": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\DashboardVentas.API.http",
+              "RelativeToolTip": "DashboardVentas.API\\DashboardVentas.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-04-17T06:33:45.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "DashboardVentas.API\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\jmcm2\\source\\repos\\DashboardVentas.API\\DashboardVentas.API\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "DashboardVentas.API\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T06:33:22.933Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
