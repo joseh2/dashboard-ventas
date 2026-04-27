@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5187/api",
+  baseURL: "https://dashboard-ventas-ccom.onrender.com/swagger/",
 });
 
 export const getDashboard = (anio, mes) => api.get(`/dashboard/${anio}/${mes}`);
