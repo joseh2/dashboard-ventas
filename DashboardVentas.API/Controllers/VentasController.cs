@@ -48,4 +48,35 @@ public class VentasController : ControllerBase
 
         return Ok(ventas);
     }
+
+[HttpPut("{id}")]
+public async Task<IActionResult> Put(int id, CrearVentaDto dto)
+{
+    var venta = await _context.Ventas.FindAsync(id);
+
+    if (venta == null)
+        return NotFound();
+
+    venta.Fecha = dto.Fecha.Date;
+    venta.Monto = dto.Monto;
+
+    await _context.SaveChangesAsync();
+
+    return Ok(venta);
+}
+
+[HttpDelete("{id}")]
+public async Task<IActionResult> Delete(int id)
+{
+    var venta = await _context.Ventas.FindAsync(id);
+
+    if (venta == null)
+        return NotFound();
+
+    _context.Ventas.Remove(venta);
+    await _context.SaveChangesAsync();
+
+    return NoContent();
+}
+
 }
