@@ -23,6 +23,10 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<MetaMensual>()
             .HasIndex(m => new { m.Anio, m.Mes })
             .IsUnique();
+            
+         modelBuilder.Entity<venta>()
+        .Property(v => v.Fecha)
+        .HasColumnType("date");
 
         modelBuilder.Entity<venta>()
             .Property(v => v.Monto)
