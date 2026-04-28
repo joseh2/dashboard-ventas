@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("react", policy =>
     {
         policy
-            .AllowAnyOrigin()
+            .WithOrigins("https://joseh2.github.io")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -31,8 +31,12 @@ app.UseSwaggerUI();
 
 app.MapGet("/", () => "Backend Dashboard Ventas funcionando en Render");
 
-//app.UseHttpsRedirection();
+app.UseRouting();
+
 app.UseCors("react");
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
