@@ -27,7 +27,7 @@ public class VentasController : ControllerBase
 
         var venta = new venta
         {
-            Fecha = dto.Fecha.Date,
+             Fecha = DateTime.SpecifyKind(dto.Fecha, DateTimeKind.Utc),
             Monto = decimal.Round(dto.Monto, 2, MidpointRounding.AwayFromZero)
         };
 
