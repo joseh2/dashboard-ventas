@@ -1,5 +1,6 @@
 ﻿using DashboardVentas.API.Data;
 using DashboardVentas.API.DTOs;
+
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
@@ -69,9 +70,11 @@ public class DashboardService
                 : decimal.Round((acumulado / metaAcumulada) * 100, 2, MidpointRounding.AwayFromZero);
 
             decimal diferenciaDia = decimal.Round(acumulado - metaAcumulada, 2, MidpointRounding.AwayFromZero);
-
+            
+            var ventaActual = ventas.FirstOrDefault(v => v.Fecha.Day == dia);
             detalle.Add(new DetalleDiarioDto
             {
+                Id = ventaActual?.Id ?? 0,
                 Dia = dia,
                 Fecha = new DateTime(anio, mes, dia),
                 VentaDia = decimal.Round(ventaDia, 2, MidpointRounding.AwayFromZero),

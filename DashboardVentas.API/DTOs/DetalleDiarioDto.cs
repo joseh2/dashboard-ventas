@@ -1,7 +1,10 @@
-﻿namespace DashboardVentas.API.DTOs
+﻿
+namespace DashboardVentas.API.DTOs
+
 {
     public class DetalleDiarioDto
     {
+        public int Id { get; set; }
         public int Dia { get; set; }
         public DateTime Fecha { get; set; }
         public decimal VentaDia { get; set; }
