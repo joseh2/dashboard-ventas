@@ -90,7 +90,9 @@ public class DashboardService
             .Where(d => d.Dia <= Math.Max(diaCorte, 0))
             .LastOrDefault()?.VentaAcumulada ?? 0;
 
-        decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
+       // decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
+        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 1), 2, MidpointRounding.AwayFromZero);
+
         decimal porcentajeAlDia = alDia == 0
             ? 0
             : decimal.Round((ventaAcumulada / alDia) * 100, 2, MidpointRounding.AwayFromZero);
