@@ -104,7 +104,7 @@ public class DashboardService
             ? 0
             : decimal.Round((ventaAcumulada / metaMensual) * 100, 2, MidpointRounding.AwayFromZero);
 
-        int diasRestantes = Math.Max(diasDelMes - diaCorte -1 , 0);
+        int diasRestantes = Math.Max(diasDelMes - diaCorte +2 , 0);
 
         decimal diariaParaMeta = (diasRestantes > 0 && falta > 0)
             ? decimal.Round(falta / diasRestantes -2 , 2, MidpointRounding.AwayFromZero)
