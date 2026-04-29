@@ -91,7 +91,7 @@ public class DashboardService
             .LastOrDefault()?.VentaAcumulada ?? 0;
 
        // decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
-        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 1), 2, MidpointRounding.AwayFromZero);
+        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 2), 2, MidpointRounding.AwayFromZero);
 
         decimal porcentajeAlDia = alDia == 0
             ? 0
