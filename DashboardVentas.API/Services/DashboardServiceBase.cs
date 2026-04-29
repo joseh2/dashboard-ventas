@@ -64,7 +64,7 @@ public class DashboardService
             decimal ventaDia = ventasPorDia.TryGetValue(dia, out var montoDia) ? montoDia : 0;
             acumulado += ventaDia;
 
-            decimal metaAcumulada = decimal.Round(metaDiaria * dia, 2, MidpointRounding.AwayFromZero);
+            decimal metaAcumulada = decimal.Round(metaDiaria * dia, 1, MidpointRounding.AwayFromZero);
             decimal porcentajeDia = metaAcumulada == 0
                 ? 0
                 : decimal.Round((acumulado / metaAcumulada) * 100, 2, MidpointRounding.AwayFromZero);
