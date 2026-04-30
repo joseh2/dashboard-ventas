@@ -91,7 +91,7 @@ public class DashboardService
             .LastOrDefault()?.VentaAcumulada ?? 0;
 
        // decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
-        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 2), 2, MidpointRounding.AwayFromZero);
+        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 1), 2, MidpointRounding.AwayFromZero);
 
         decimal porcentajeAlDia = alDia == 0
             ? 0
@@ -131,7 +131,7 @@ public class DashboardService
             PorcentajeTotal = porcentajeTotal,
             MesPasado = mesPasado,
             AnioPasado = anioPasado,
-            ProyeccionTienda = decimal.Round(diariaParaMeta * 0.5m, 2, MidpointRounding.AwayFromZero),
+    1       ProyeccionTienda = decimal.Round(diariaParaMeta * 0.5m, 2, MidpointRounding.AwayFromZero),
             ProyeccionVendedor = decimal.Round( diariaParaMeta * 0.5m  /5, 2, MidpointRounding.AwayFromZero),
             ProyeccionMayoreo = decimal.Round(diariaParaMeta * 0.1m / 5, 2, MidpointRounding.AwayFromZero),
             Detalle = detalle
