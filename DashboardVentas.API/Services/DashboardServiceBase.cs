@@ -131,7 +131,7 @@ public class DashboardService
             PorcentajeTotal = porcentajeTotal,
             MesPasado = mesPasado,
             AnioPasado = anioPasado,
-    1       ProyeccionTienda = decimal.Round(diariaParaMeta * 0.5m, 2, MidpointRounding.AwayFromZero),
+            ProyeccionTienda = decimal.Round(diariaParaMeta * 0.5m, 2, MidpointRounding.AwayFromZero),
             ProyeccionVendedor = decimal.Round( diariaParaMeta * 0.5m  /5, 2, MidpointRounding.AwayFromZero),
             ProyeccionMayoreo = decimal.Round(diariaParaMeta * 0.1m / 5, 2, MidpointRounding.AwayFromZero),
             Detalle = detalle
