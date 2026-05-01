@@ -107,7 +107,7 @@ public class DashboardService
         int diasRestantes = Math.Max(diasDelMes - diaCorte  , 0);
 
         decimal diariaParaMeta = (diasRestantes > 0 && falta > 0)
-            ? decimal.Round(falta / diasRestantes -1 , 2, MidpointRounding.AwayFromZero)
+            ? decimal.Round(falta / diasRestantes  , 2, MidpointRounding.AwayFromZero)
             : 0;
 
         var mesPasado = await ObtenerComparativoMismoCorteAsync(anio, mes, diaCorte, -1);
