@@ -1,6 +1,5 @@
 ﻿using DashboardVentas.API.Data;
 using DashboardVentas.API.DTOs;
-
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
@@ -64,22 +63,24 @@ public class DashboardService
             decimal ventaDia = ventasPorDia.TryGetValue(dia, out var montoDia) ? montoDia : 0;
             acumulado += ventaDia;
 
-                  decimal metaAcumulada = dia == 1 ? metaDiaria : decimal.Round(metaDiaria * (dia - 1), 2, MidpointRounding.AwayFromZero);
+            // 🔥 CORREGIDO (antes estaba con dia - 1)
+            decimal metaAcumulada = decimal.Round(metaDiaria * dia, 2, MidpointRounding.AwayFromZero);
 
             decimal porcentajeDia = metaAcumulada == 0
                 ? 0
                 : decimal.Round((acumulado / metaAcumulada) * 100, 2, MidpointRounding.AwayFromZero);
 
             decimal diferenciaDia = decimal.Round(acumulado - metaAcumulada, 2, MidpointRounding.AwayFromZero);
-            
+
             var ventaActual = ventas.FirstOrDefault(v => v.Fecha.Day == dia);
+
             detalle.Add(new DetalleDiarioDto
             {
                 Id = ventaActual?.Id ?? 0,
                 Dia = dia,
                 Fecha = new DateTime(anio, mes, dia),
                 VentaDia = decimal.Round(ventaDia, 2, MidpointRounding.AwayFromZero),
-                VentaAcumulada = decimal.Round(acumulado, 1, MidpointRounding.AwayFromZero),
+                VentaAcumulada = decimal.Round(acumulado, 2, MidpointRounding.AwayFromZero),
                 MetaAcumulada = metaAcumulada,
                 PorcentajeDia = porcentajeDia,
                 DiferenciaDia = diferenciaDia
@@ -90,8 +91,8 @@ public class DashboardService
             .Where(d => d.Dia <= Math.Max(diaCorte, 0))
             .LastOrDefault()?.VentaAcumulada ?? 0;
 
-       // decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
-        decimal alDia = decimal.Round(metaDiaria * (diaCorte - 1), 2, MidpointRounding.AwayFromZero);
+        // 🔥 CORREGIDO (antes estaba con diaCorte - 1)
+        decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
 
         decimal porcentajeAlDia = alDia == 0
             ? 0
@@ -104,10 +105,11 @@ public class DashboardService
             ? 0
             : decimal.Round((ventaAcumulada / metaMensual) * 100, 2, MidpointRounding.AwayFromZero);
 
-        int diasRestantes = Math.Max(diasDelMes - diaCorte  , 0);
+        // 🔥 Esto ya está correcto
+        int diasRestantes = Math.Max(diasDelMes - diaCorte, 0);
 
         decimal diariaParaMeta = (diasRestantes > 0 && falta > 0)
-            ? decimal.Round(falta / diasRestantes  , 2, MidpointRounding.AwayFromZero)
+            ? decimal.Round(falta / diasRestantes, 2, MidpointRounding.AwayFromZero)
             : 0;
 
         var mesPasado = await ObtenerComparativoMismoCorteAsync(anio, mes, diaCorte, -1);
@@ -132,7 +134,7 @@ public class DashboardService
             MesPasado = mesPasado,
             AnioPasado = anioPasado,
             ProyeccionTienda = decimal.Round(diariaParaMeta * 0.5m, 2, MidpointRounding.AwayFromZero),
-            ProyeccionVendedor = decimal.Round( diariaParaMeta * 0.5m  /5, 2, MidpointRounding.AwayFromZero),
+            ProyeccionVendedor = decimal.Round(diariaParaMeta * 0.5m / 5, 2, MidpointRounding.AwayFromZero),
             ProyeccionMayoreo = decimal.Round(diariaParaMeta * 0.1m / 5, 2, MidpointRounding.AwayFromZero),
             Detalle = detalle
         };
@@ -187,3 +189,4 @@ public class DashboardService
         };
     }
 }
+
