@@ -1,5 +1,6 @@
 ﻿import { useEffect, useMemo, useState } from "react";
-import { getDashboard, saveMeta, saveVenta } from "./api/dashboardApi";
+
+import { getDashboard, saveMeta, saveVenta, updateVenta, deleteVenta } from "./api/dashboardApi";
 import SummaryCard from "./components/SummaryCard";
 import MetaForm from "./components/MetaForm";
 import SalesForm from "./components/SalesForm";
@@ -21,6 +22,23 @@ export default function App() {
   const [dashboard, setDashboard] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+const editarVenta = async (id, payload) => {
+  await updateVenta(id, payload);
+  alert("Venta modificada correctamente");
+  await cargarDashboard();
+};
+
+const borrarVenta = async (id) => {
+  const confirmar = confirm("¿Seguro que deseas borrar esta venta?");
+  if (!confirmar) return;
+
+  await deleteVenta(id);
+  alert("Venta borrada correctamente");
+  await cargarDashboard();
+};
+
+
 
   const meses = useMemo(
     () => [
@@ -138,7 +156,11 @@ export default function App() {
             </section>
 
             <SalesChart rows={dashboard.detalle} />
-            <DailyTable rows={dashboard.detalle} />
+          <DailyTable 
+  rows={dashboard.detalle} 
+  onEdit={editarVenta}
+  onDelete={borrarVenta}
+/>
           </>
         )}
       </div>
