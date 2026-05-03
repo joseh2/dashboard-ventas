@@ -92,7 +92,7 @@ public class DashboardService
             .LastOrDefault()?.VentaAcumulada ?? 0;
 
         // 🔥 CORREGIDO (antes estaba con diaCorte - 1)
-        decimal alDia = decimal.Round(metaDiaria * diaCorte -1, 2, MidpointRounding.AwayFromZero);
+        decimal alDia = decimal.Round(metaDiaria * diaCorte, 2, MidpointRounding.AwayFromZero);
 
         decimal porcentajeAlDia = alDia == 0
             ? 0
@@ -106,7 +106,7 @@ public class DashboardService
             : decimal.Round((ventaAcumulada / metaMensual) * 100, 2, MidpointRounding.AwayFromZero);
 
         // 🔥 Esto ya está correcto
-        int diasRestantes = Math.Max(diasDelMes - diaCorte, 0);
+        int diasRestantes = Math.Max(diasDelMes - diaCorte+1, 0);
 
         decimal diariaParaMeta = (diasRestantes > 0 && falta > 0)
             ? decimal.Round(falta / diasRestantes, 2, MidpointRounding.AwayFromZero)
